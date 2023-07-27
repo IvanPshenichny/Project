@@ -1,0 +1,63 @@
+.mainConstructorContainer {
+  height: 154px;
+  width: 207px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Maincontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Toglebuttons {
+  height: 25px;
+  width: 40px;
+  margin: 2px;
+  font-size: 80%;
+  color: white;
+  z-index: 3;
+  position: relative;
+}
+
+.rightDropZone {
+  margin-top: 45px;
+  border-style: dashed;
+  height: 268px;
+  width: 172px;
+  border-radius: 4px;
+  margin: 5px;
+  border-color: darkgray;
+  margin-left: 100px;
+  z-index: 2;
+  position: relative;
+}
+
+.leftDropZone {
+  border-style: dashed;
+  height: 268px;
+  width: 172px;
+  border-radius: 4px;
+  margin: 5px;
+  border-color: darkgray;
+  margin-top: 45px;
+  z-index: 2;
+  position: relative;
+}
+.mainZoneOff {
+  height: 700px;
+  width: 100%;
+  background-color: none;
+  z-index: 1;
+  position: absolute;
+}
+.mainZoneON {
+  height: 700px;
+  width: 100%;
+  background-color: none;
+  z-index: 1;
+  position: absolute;
+}

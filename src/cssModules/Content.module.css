@@ -1,0 +1,11 @@
+.content {
+  height: 700px;
+  width: 100%;
+  background-color: azure;
+}
+.insideContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}

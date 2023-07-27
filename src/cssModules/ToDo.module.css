@@ -1,0 +1,29 @@
+.toDo {
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  margin-top: 15px;
+}
+.toDoInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.toDoItemWrapper {
+  width: 25%;
+  height: 100%;
+  border-radius: 4px;
+  border-width: 10px;
+  background-color: rgb(233, 233, 233);
+}
+.toDoItem {
+  margin: 5px;
+}
+.input {
+  width: 24.5%;
+  height: 25px;
+  border-radius: 4px;
+  border-width: 1.6px;
+  background-color: rgb(233, 233, 233);
+}

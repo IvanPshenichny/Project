@@ -1,24 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import Register from "./components/Register";
+import { ToDo } from "./components/ToDoList";
+import { Users } from "./components/Users";
 
 function App() {
+  const [isAuth, setAuth] = useState(false);
+  const setAuthentification = (boolean) => {
+    setAuth(boolean);
+  };
+  async function isauth() {
+    try {
+      const response = await fetch("http://localhost:3001/auth/is-verify", {
+        method: "GET",
+        headers: { token: localStorage.token },
+      });
+      const parseRes = await response.json()
+      parseRes===true ? setAuth(true) : setAuth(false)
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+  useEffect(() => {
+    isauth();
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            !isAuth ? (
+              <Login setAuthentification={setAuthentification} />
+            ) : (
+              <Navigate to="/dashboard" />
+            )
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            !isAuth ? (
+              <Register setAuthentification={setAuthentification} />
+            ) : (
+              <Navigate to="/dashboard" />
+            )
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            isAuth ? (
+              <Dashboard setAuthentification={setAuthentification} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route path="Users" element={<Users />} />
+          <Route path="ToDoList" element={<ToDo />} />
+        </Route>
+        <Route path="*" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
