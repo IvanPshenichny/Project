@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Register from "./components/Register";
 import { ToDo } from "./components/ToDoList";
 import { Users } from "./components/Users";
+import { Calculator } from "./components/calculator/Calculator";
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -63,6 +64,7 @@ function App() {
         >
           <Route path="Users" element={<Users />} />
           <Route path="ToDoList" element={<ToDo />} />
+          <Route path="Calculator" element={<Calculator />} />
         </Route>
         <Route path="*" element={<Login />} />
       </Routes>

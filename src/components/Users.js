@@ -20,9 +20,14 @@
  console.log(allUsers)
    const UsersStateList = allUsers.map((u) => {
    return (
+    <div>
    <div className={styless.users}>
    <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png" />
    {u.firstname + ' ' + u.lastname}
+   </div>
+   <div>
+    <button> Delete </button>
+   </div>
    </div>
    );
    });

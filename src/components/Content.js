@@ -3,7 +3,7 @@ import styles from "../cssModules/Content.module.css";
 import { ToDo} from "./ToDoList";
 import { Users } from "./Users";
 import { Routes, Route } from "react-router-dom";
-// import { Calculator } from "./Calculator/Calculator";
+import { Calculator } from "./calculator/Calculator";
 
 localStorage.setItem("usersState", JSON.stringify([]));
 
@@ -34,7 +34,7 @@ const [addUserNameState, changeUserName] = useState("");
            <Users/>} 
            />
            <Route path="/ToDoList/" element={<ToDo />} />
-           {/* <Route path="/Calculator/" element={<Calculator />} /> */}
+           <Route path="/Calculator/" element={<Calculator />} />
          </Routes>
      </div>
    );
