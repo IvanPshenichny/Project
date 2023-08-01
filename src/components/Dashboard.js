@@ -50,14 +50,11 @@ const Dashboard = (props) => {
   return (
     <div className={styles.app}>
       <div>
-        <Header name = {name}/>
+        <Header logout = {logout} name = {name}/>
       </div>
       <div className={styless.NavBarContextArea}>
         <NavBar/>
         <Content/>
-      </div>
-      <div>
-        <button onClick={e => logout(e)}>Logout</button>
       </div>
     </div>
   );

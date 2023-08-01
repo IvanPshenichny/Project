@@ -1,9 +1,7 @@
 .usersManagment {
-  
   padding: 5px;
   margin-top: 10px;
-  align-items:center
-  
+  align-items: center;
 }
 .usersManagment img {
   width: 80px;
@@ -15,10 +13,10 @@
 }
 .users {
   display: flex;
-  flex-direction: row;
-  padding: 15px;
-  margin-top: 10px;
-  align-items: flex-end;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 0px;
+  align-items: center;
 }
 .users img {
   width: 80px;

@@ -1,4 +1,4 @@
-.header {
+.leftSide {
   display: flex;
   flex-direction: column;
   height: 70px;
@@ -8,11 +8,17 @@
 .header img {
   width: 50px;
   height: 50px;
-  padding-left: 5px;
+  padding-left: 7px;
   padding-top: 5px;
 }
 .name {
-  padding-left: 10px;
-  padding-top: 48px;
+  padding-left: 5px;
+  padding-top: 50px;
   position: absolute;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: darkgray;
+  align-items: center;
 }
