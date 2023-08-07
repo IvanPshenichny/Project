@@ -3,17 +3,6 @@ import styles from "../cssModules/login&register.module.css";
 import { Link } from "react-router-dom";
 
 const Login = (props) => {
-  // const [inputs, setInputs] = useState ({
-  //     firstname: '',
-  //     lastname: '',
-  //     email: '',
-  //     password: '',
-  // })
-  // const {firstname, lastname, email, password} = inputs
-  // const onChange = e => {
-  //     setInputs({...inputs, [e.target.name] : e.target.value});
-  // }
-
   const [firstname, changefirstname] = useState("");
   const [lastname, changelastname] = useState("");
   const [email, changeEmail] = useState("");

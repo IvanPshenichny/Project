@@ -19,8 +19,8 @@ function App() {
         method: "GET",
         headers: { token: localStorage.token },
       });
-      const parseRes = await response.json()
-      parseRes===true ? setAuth(true) : setAuth(false)
+      const parseRes = await response.json();
+      parseRes === true ? setAuth(true) : setAuth(false);
     } catch (err) {
       console.error(err.message);
     }
