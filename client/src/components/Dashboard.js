@@ -50,38 +50,14 @@ const Dashboard = (props) => {
   return (
     <div className={styles.app}>
       <div>
-        <Header logout = {logout} name = {name}/>
+        <Header logout={logout} name={name} />
       </div>
       <div className={styless.NavBarContextArea}>
-        <NavBar/>
-        <Content/>
+        <NavBar />
+        <Content />
       </div>
     </div>
   );
-  //
-  //
-  //     return (
-  //         <div className={styles.app}>
-  //             <div>
-  //         <Header
-  //         name = {name}
-  //         logout = {logout}
-  //         />
-  //       </div>
-
-  //     <div className={styles.app}>
-
-  //         <div className={styless.NavBarContextArea}>
-  //           <NavBar />
-  //           <Content
-  //           users = {users}
-  //           name = {name}
-  //           />
-
-  //         </div>
-  //     </div>
-  //     </div>
-  //     )
 };
 
 export default Dashboard;

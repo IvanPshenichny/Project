@@ -66,7 +66,7 @@ function App() {
           <Route path="ToDoList" element={<ToDo />} />
           <Route path="Calculator" element={<Calculator />} />
         </Route>
-        <Route path="*" element={<Login />} />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
   );
