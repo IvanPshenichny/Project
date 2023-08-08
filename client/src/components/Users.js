@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "../cssModules/Content.module.css";
 import styless from "../cssModules/Users.module.css";
+import { PopUp } from "./Popup";
+import Popup from 'reactjs-popup';
+
 
 const Users = (props) => {
   const [allUsers, setAllUsers] = useState([""]);
@@ -34,7 +37,7 @@ const Users = (props) => {
     return (
       <div className={styless.users} key={u.id}>
         <div className={styless.users}>
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+        <PopUp/>
           {u.firstname + " " + u.lastname}
         </div>
         <div>

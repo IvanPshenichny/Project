@@ -3,6 +3,7 @@ import styles from "../cssModules/login&register.module.css";
 import { Link } from "react-router-dom";
 
 const Login = (props) => {
+  localStorage.removeItem("token");
   const [email, changeEmail] = useState("");
   const [passwords, changePassword] = useState("");
 
