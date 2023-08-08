@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../cssModules/Content.module.css";
 import styless from "../cssModules/Users.module.css";
 import { PopUp } from "./Popup";
-import Popup from 'reactjs-popup';
+
 
 
 const Users = (props) => {
@@ -37,7 +37,7 @@ const Users = (props) => {
     return (
       <div className={styless.users} key={u.id}>
         <div className={styless.users}>
-        <PopUp/>
+        <PopUp className={styless.popupBox}/>
           {u.firstname + " " + u.lastname}
         </div>
         <div>
