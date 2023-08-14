@@ -12,9 +12,32 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  background: #ffffff;
+  background: #ededed;
+  border-radius: 10px;
+  height: 100%;
 
 }
 .textArea {
-    margin-left: 60px;
+    margin-left: 17px;
+    
+}
+.textArea:focus {
+    outline: 10px;
+    
+}
+.textArea:hover {
+    border-color: rgb(0, 255, 170);
+    transition-duration: 0.3s;
+    
+  }
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.title {
+    margin: 10px;
+    margin-left: 20px;
 }

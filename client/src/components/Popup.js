@@ -3,50 +3,68 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import styles from "../cssModules/popup.module.css";
 
-export const PopUp = () => {
-  const [firstNameValue, setFNvalue] = useState("");
-  const firstNameValueHandler = (e) => {
-    setFNvalue(e.target.value);
-  };
-  const [LastNameValue, setLNvalue] = useState("");
-  const lastNameValueHandler = (e) => {
-    setLNvalue(e.target.value);
+export const PopUp = (props) => {
+  const id = props.id;
+  const getAllUsers = props.getAllUsers;
+  const [firstname, setFNvalue] = useState("");
+  const [lastname, setLNvalue] = useState("");
+  const updateUsers = async (id) => {
+    
+    try {
+        const body = { firstname, lastname };
+      const response = await fetch(`http://localhost:3001/updateUsers/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      getAllUsers();
+      setFNvalue('');
+      setLNvalue('');
+    } catch (err) {
+      console.error(err.message);
+    }
   };
   return (
-    <div >
+    <div>
       <Popup 
         trigger={
           <img
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
+            src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Cutout.png"
+            
           />
         }
-        modal
+       
+        //modal
         nested 
       >
         {(close) => (
           <div className={styles.popupBox}>
             <div className={styles.popup}>
-              <h3 >Change your first and last Names</h3>
+              <h3 className={styles.title} >Change your first and last Names</h3>
               <div >
                 <textarea 
                 className={styles.textArea}
                   placeholder="First Name"
-                  onChange={firstNameValueHandler}
-                  value={firstNameValue}
+                  onChange={e => {setFNvalue(e.target.value)}}
+                  value={firstname}
                 />
               </div>
               <div>
                 <textarea
                 className={styles.textArea}
                   placeholder="Last Name"
-                  onChange={lastNameValueHandler}
-                  value={LastNameValue}
+                  onChange={e => {setLNvalue(e.target.value)}}
+                  value={lastname}
                 />
               </div>
             </div>
             <div>
-              <button onClick={() => close()}>Change your data</button>
+              <button onSubmit={updateUsers}
+              className={styles.button}
+              onClick={() => {updateUsers(id); close(); }}>
+                Change your data
+                </button>
+                
             </div>
           </div>
         )}

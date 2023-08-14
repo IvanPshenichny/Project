@@ -6,12 +6,16 @@ const Header = (props) => {
     <div className={styles.header}>
       <div className={styles.leftSide}>
         <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+          <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Cutout.png" />
         </div>
         <div className={styles.name}>{props.name}</div>
       </div>
       <div>
-        <button onClick={props.logout}>Logout</button>
+        <button 
+        onClick={props.logout}
+        className={styles.logoutButton}>
+          Logout
+          </button>
       </div>
     </div>
   );

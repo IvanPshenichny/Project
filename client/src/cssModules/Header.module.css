@@ -22,3 +22,14 @@
   background-color: darkgray;
   align-items: center;
 }
+.logoutButton {
+  border: none;
+  background-color: rgb(156, 156, 156);
+  
+}
+.logoutButton:hover {
+  width: 85px;
+  height: 85px;
+  transition-duration: 0.1s;
+  opacity:0.9;
+}

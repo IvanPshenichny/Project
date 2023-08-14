@@ -6,6 +6,7 @@ const jwtAuth = require("./Routes/jwtAuth");
 const dashboard = require("./Routes/dashboard");
 const allUsers = require("./Routes/allUsers");
 const deleteUsers = require("./Routes/deleteUsers");
+const updateUsers = require("./Routes/updateUsers");
 const PORT = 3001;
 
 app.use(express.json()); //req.body
@@ -17,6 +18,7 @@ app.use("/auth/", jwtAuth);
 app.use("/dashboard", dashboard);
 app.use("/allUsers", allUsers);
 app.use("/deleteUsers/:id", deleteUsers);
+app.put("/updateUsers/:id", updateUsers);
 
 const start = async () => {
   try {

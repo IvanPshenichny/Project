@@ -1,13 +1,10 @@
-const getAllUsers =
-  "SELECT firstname, lastname, id, email, passwords FROM UserAuthData";
+const getAllUsers ="SELECT firstname, lastname, id, email, passwords FROM UserAuthData";
 const getUserById = "SELECT * FROM UserAuthData WHERE id = $1";
-const addUsers =
-  "INSERT INTO UserAuthData (firstname, lastname, email, passwords) VALUES ($1, $2, $3, $4) RETURNING *";
+const addUsers ="INSERT INTO UserAuthData (firstname, lastname, email, passwords) VALUES ($1, $2, $3, $4) RETURNING *";
 const checkEmailExist = "SELECT * FROM UserAuthData WHERE email = $1";
 const removeUsers = "DELETE FROM UserAuthData WHERE id = $1 ";
-const updateUsers = "UPDATE userauthdata SET firstname = $1 WHERE id = 2";
-const getUser =
-  "SELECT firstname, lastname, email FROM UserAuthData WHERE id = $1";
+const updateUsersData = "UPDATE UserAuthData SET  firstname =$1,lastname =$2 WHERE id =$3";
+const getUser ="SELECT firstname, lastname, email FROM UserAuthData WHERE id = $1";
 
 module.exports = {
   getAllUsers,
@@ -15,6 +12,6 @@ module.exports = {
   checkEmailExist,
   addUsers,
   removeUsers,
-  updateUsers,
+  updateUsersData,
   getUser,
 };

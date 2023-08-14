@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../cssModules/Content.module.css";
 import styless from "../cssModules/Users.module.css";
+import stylesss from "../cssModules/popup.module.css";
 import { PopUp } from "./Popup";
 
 
@@ -32,12 +33,10 @@ const Users = (props) => {
     getAllUsers();
   }, []);
   const UsersStateList = allUsers.map((u) => {
-    const id = u.id;
-    console.log(id);
     return (
       <div className={styless.users} key={u.id}>
         <div className={styless.users}>
-        <PopUp className={styless.popupBox}/>
+        <PopUp getAllUsers = {getAllUsers} id={u.id}/>
           {u.firstname + " " + u.lastname}
         </div>
         <div>
